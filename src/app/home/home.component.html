@@ -1,0 +1,19 @@
+<section class="my-5">
+
+    <h1 class="text-center text-secondary">Welcome to MBird shopping<br>Prepare for SUMMER OFFERS</h1>
+
+    <div class="row align-items-stretch mt-3">
+        <div class="col-md-4 col-lg-3 mb-3" *ngFor="let item of items; let i =index;">
+            <div class="card">
+                <img class="card-img-top" style="height: 300px;" src="{{item['image']}}" alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title" style="height:75px">{{item['title']}}</h6>
+                    <p class="text-primary">{{item['category']}}</p>
+                    <p class="card-text fixed-hight">{{item['price']}} $</p>
+                    <button class="btn btn-primary" (click)="addItem(item)">Add to my cart</button>
+                    <a [routerLink]="['/home',item['id']]" class="btn btn-success mt-2">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

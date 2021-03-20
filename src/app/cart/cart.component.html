@@ -1,0 +1,15 @@
+
+<section class="my-5">
+
+    <div *ngFor="let item of items; let i =index;">
+        <div class="d-flex">
+            <img style="height: 100px;" src="{{item['image']}}" alt="Card image cap">
+            <div class="d-flex">
+                <h6 class="mr-5" style="height:75px">{{item['title']}}</h6>
+                <p class="text-primary">{{item['category']}}</p>
+                <p class="card-text fixed-hight">{{item['price']}} $</p>
+            </div>
+        </div>
+    </div>
+
+</section>

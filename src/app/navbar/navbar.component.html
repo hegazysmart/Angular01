@@ -1,0 +1,37 @@
+<section>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" routerLink="/"><img class="img-fluid h-50 mr-5" src="../../assets/imgs/logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <div class="col">
+                            <div ngbDropdown class="d-inline-block">
+                                <button class="btn btn-outline-none nav-link" id="dropdownBasic1" ngbDropdownToggle>Profile <fa-icon [icon]="faUserCircle"></fa-icon></button>
+                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                    <button ngbDropdownItem><a class="nav-link" [routerLink]="['/profile']">View</a></button>
+                                    <button ngbDropdownItem><a class="nav-link" [routerLink]="['/profile']">Edit Profile</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cart"> <fa-icon [icon]="faCartPlus"></fa-icon></a>
+                    </li>
+                    <li class="nav-item">
+                        <p>{{length}}</p>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>

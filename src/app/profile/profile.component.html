@@ -1,0 +1,56 @@
+<div class="my-5">
+    <form [formGroup]="registrationForm" (ngSubmit)="submitRegistration()">
+        <div class="imgcontainer">
+            <img src="../../assets/imgs/unnamed.png" class="w-25" alt="Avatar">
+        </div>
+
+        <label for="name"><b>Name</b></label>
+        <input type="text" class="form-control" formControlName='name'
+            placeholder="name" id="name" name="name">
+        <div 
+            *ngIf='registrationControls.name.touched && 
+            registrationControls.name.errors?.required' 
+            class="text-danger">Required
+        </div>
+
+        <label for="uEmail"><b>Mail</b></label>
+        <input type="text" class="form-control" formControlName='email' 
+            placeholder="your_mail@domain.com" id="uEmail"name="uEmail">
+        <div 
+            *ngIf='registrationControls.email.touched && 
+            registrationControls.email.invalid' 
+            class="text-danger">E-mail not valid
+        </div>
+
+        <label for="userName"><b>userName</b></label>
+        <input type="text" class="form-control" formControlName='userName' 
+            placeholder="choose unique user name" id="userName"name="userName">
+        <div 
+            *ngIf='registrationControls.userName.touched && 
+            registrationControls.userName.invalid' 
+            class="text-danger">no spaces allowed
+        </div>
+
+        <label for="uPassword"><b>Password</b></label>
+        <input type="password" class="form-control" formControlName='password' placeholder="Enter Password" id="uPassword"
+            name="uPassword">
+        <div 
+            *ngIf='registrationControls.password.touched && (registrationControls.password.invalid)' 
+            class="text-danger">password should be at least 8 characters
+        </div>
+
+        <label for="repeatedPassword"><b>Confirm password</b></label>
+        <input type="password" class="form-control" formControlName='repeatedPass' placeholder="Enter Password"
+            id="repeatedPassword" name="repeatedPassword">
+        <div 
+            *ngIf='registrationControls.repeatedPass.touched && 
+            (registrationControls.repeatedPass.value != registrationControls.password.value)' 
+            class="text-danger">Passwords not matched
+        </div>
+        
+        <!--[(ngModel)]="ngForm.uPassword"-->
+        <button type="submit">update</button>
+    </form>
+    
+
+</div>
